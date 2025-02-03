@@ -1,8 +1,2 @@
-fail_builds: true                  # Fallar el build si se detectan vulnerabilidades
-severity_threshold: medium         # Reportar vulnerabilidades de severidad media o superior
-ignore_dirs:                       # Directorios que serán ignorados durante el escaneo
-  - "node_modules"
-  - "venv"
-ignore_paths:                      # Rutas específicas que serán ignoradas
-  - "tests/**"
-  - "**/*.md"
+fail_builds: true                  
+severity_threshold: medium         
