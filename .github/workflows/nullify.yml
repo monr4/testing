@@ -15,7 +15,8 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Run Nullify Security Scan
-        uses: Nullify-Platform/nullify-action@v1
+        uses: nullify-platform/nullify-action@v1
         with:
+          api_token: ${{ secrets.NULLIFY_API_TOKEN }} # Token API de Nullify
           severity_threshold: "low"
 
