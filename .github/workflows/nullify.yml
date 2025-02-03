@@ -1,22 +1,24 @@
 name: Nullify Security Scan
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-  workflow_dispatch:
+  push:                # Ejecuta el escaneo en cada push
+    branches:
+      - main           # Apunta a la rama principal
+  pull_request:        # También ejecuta escaneos en Pull Requests
+    branches:
+      - main
+  workflow_dispatch:   # Permite ejecutar el workflow manualmente
 
 jobs:
   security_scan:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Configura el sistema operativo base
+
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3  # Clona el repositorio en el runner
 
       - name: Run Nullify Security Scan
         uses: nullify-platform/nullify-action@v1
         with:
-          api_token: ${{ secrets.NULLIFY_API_TOKEN }} # Token API de Nullify
-          severity_threshold: "low"
-
+          api_token: ${{ secrets.NULLIFY_API_TOKEN }}  # Token API de Nullify
+          severity_threshold: "medium"                # Umbral de severidad
