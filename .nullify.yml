@@ -1,8 +1,9 @@
-fail_builds: true                  # Fallar el build si se detectan vulnerabilidades
-severity_threshold: medium         # Reportar vulnerabilidades de severidad media o superior
-ignore_dirs:                       # Directorios que serán ignorados durante el escaneo
+fail_builds: true                  # Fallar el build si hay vulnerabilidades
+severity_threshold: medium         # Detectar vulnerabilidades desde severidad media
+owasp_top_10: true                 # Activar análisis basado en OWASP Top 10
+ignore_dirs:                       # Directorios que no se analizarán
   - "node_modules"
   - "venv"
-ignore_paths:                      # Rutas específicas que serán ignoradas
-  - "tests/**"
+ignore_paths:                      # Ignorar rutas específicas
   - "**/*.md"
+  - "docs/**"
