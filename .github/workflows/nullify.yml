@@ -1,0 +1,21 @@
+name: Nullify Security Scan
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  security_scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run Nullify Security Scan
+        uses: Nullify-Platform/nullify-action@v1
+        with:
+          severity_threshold: "low"
+
