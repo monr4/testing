@@ -1,0 +1,4 @@
+severity_threshold: low  # Detectar todas las vulnerabilidades (low, medium, high)
+scan_on_push: true  # Analizar cada vez que se suba código
+scan_on_pull_request: true  # Analizar cada PR
+enable_autofix: true  # Intentar arreglar automáticamente vulnerabilidades
